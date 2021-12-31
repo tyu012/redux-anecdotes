@@ -32,6 +32,8 @@ const reducer = (state = initialState, action) => {
         anecdote.id === targetId ? updatedAnecdote : anecdote)
       console.log('VOTE', newState)
       return newState
+    case 'ADD_ANECDOTE':
+      return [...state, action.data]
     default:
       console.log('invalid action')
       return state
@@ -42,6 +44,13 @@ export const addVote = id => {
   return {
     type: 'VOTE',
     data: { id }
+  }
+}
+
+export const addAnecdote = anecdote => {
+  return {
+    type: 'ADD_ANECDOTE',
+    data: asObject(anecdote)
   }
 }
 
