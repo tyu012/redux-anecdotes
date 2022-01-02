@@ -1,6 +1,6 @@
 const initialState = {
   text: 'Welcome to notes app!',
-  showing: true
+  showing: false
 }
 
 const reducer = (state = initialState, action) => {

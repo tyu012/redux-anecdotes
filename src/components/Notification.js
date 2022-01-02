@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { useSelector } from 'react-redux'
 
@@ -10,7 +9,11 @@ const Notification = () => {
     borderWidth: 1
   }
   return (
-    <div style={style}>
+    <div
+      style={notification.showing
+        ? style
+        : { display: 'none' }}
+    >
       {notification.text}
     </div>
   )
