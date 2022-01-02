@@ -1,4 +1,9 @@
-const reducer = (state = 'No notification', action) => {
+const initialState = {
+  text: 'Welcome to notes app!',
+  showing: true,
+}
+
+const reducer = (state = initialState, action) => {
   console.log('State now:', state)
   console.log('Action:', action)
 
