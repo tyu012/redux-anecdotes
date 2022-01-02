@@ -11,9 +11,7 @@ const Notification = () => {
   }
   return (
     <div style={style}>
-      {notification.showing
-        ? notification.text
-        : ''}
+      {notification.text}
     </div>
   )
 }
