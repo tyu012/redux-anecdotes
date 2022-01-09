@@ -32,7 +32,7 @@
     },
     {
       "content": "TEST",
-      "votes": 10,
+      "votes": 19,
       "id": "mVhsq1p"
     },
     {
@@ -44,6 +44,16 @@
       "content": "Testing notifications",
       "votes": 2,
       "id": "3jrizFG"
+    },
+    {
+      "content": "Another test",
+      "votes": 0,
+      "id": "pPqXJBm"
+    },
+    {
+      "content": "If it works as usual, it probably doesn't",
+      "votes": 0,
+      "id": "9u6NvOG"
     }
   ]
 }
