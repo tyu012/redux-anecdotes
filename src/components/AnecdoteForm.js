@@ -15,8 +15,8 @@ const AnecdoteForm = () => {
 
     dispatch(addAnecdote(anecdote))
     
-    dispatch(showNotification(`submitted '${anecdote}'`))
-    setTimeout(() => dispatch(hideNotification()), 5000)
+    dispatch(showNotification(`submitted '${anecdote}'`, 5))
+    // setTimeout(() => dispatch(hideNotification()), 5000)
   }
 
   return (

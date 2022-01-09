@@ -23,11 +23,20 @@ const reducer = (state = initialState, action) => {
   }
 }
 
-export const showNotification = text => {
-  return {
-    type: 'SHOW_NOTIF',
-    data: text,
+export const showNotification = (text, time /* in seconds */) => {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(hideNotification())
+    }, time * 1000)
+    dispatch({
+      type: 'SHOW_NOTIF',
+      data: text,
+    })
   }
+  // return {
+  //   type: 'SHOW_NOTIF',
+  //   data: text,
+  // }
 }
 export const hideNotification = () => {
   return {
