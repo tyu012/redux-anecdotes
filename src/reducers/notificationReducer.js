@@ -9,14 +9,19 @@ const reducer = (state = initialState, action) => {
 
   switch (action.type) {
     case 'SHOW_NOTIF':
+      if (state.timeoutId) {
+        clearTimeout(state.timeoutId)
+      }
       return {
-        text: action.data,
-        showing: true
+        text: action.data.text,
+        showing: true,
+        timeoutId: action.data.timeoutId,
       }
     case 'HIDE_NOTIF':
       return {
         text: '',
-        showing: false
+        showing: false,
+        timeoutId: undefined,
       }
     default:
       return state
@@ -25,18 +30,17 @@ const reducer = (state = initialState, action) => {
 
 export const showNotification = (text, time /* in seconds */) => {
   return dispatch => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       dispatch(hideNotification())
     }, time * 1000)
     dispatch({
       type: 'SHOW_NOTIF',
-      data: text,
+      data: {
+        text,
+        timeoutId,
+      },
     })
   }
-  // return {
-  //   type: 'SHOW_NOTIF',
-  //   data: text,
-  // }
 }
 export const hideNotification = () => {
   return {
